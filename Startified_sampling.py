@@ -57,4 +57,19 @@ def stratified_split(df, train_ratio , col):
     test_indexes = [i for i in df.index if i not in train_indexes]
 
     return df.loc[train_indexes], df.loc[test_indexes]
+
+
+
+### Very elegant solution I found online for the same, username was annonymous so I don't know the real name.
+
+def stratified_split(df, train_ratio , col):
+    train, test = [], []
+    df = df.sample(frac=1)
+    for val in np.unique(df[col]):
+        rows = int(round(len(df[df[col]==val]) * train_ratio))
+        train.append(df[df[col]==val][0:rows])
+        test.append(df[df[col]==val][rows:])
+    return pd.concat(train), pd.concat(test)
+
+
   
