@@ -8,3 +8,5 @@ Pandas playground
 5. **[filling null values with last valid value](./filling_null_values.py)**
 6. **[Sparse Matrix Multiplication](./Sparse_matrix_multiplication.py)**
 7. **[Bucketing](./Bucket_Test.py)**
+8. **[Flatten JSON](./Flatten_json.py)**
+
